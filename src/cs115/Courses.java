@@ -1,8 +1,6 @@
 package cs115;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * Created by icyhot on 7/3/2017.
@@ -17,7 +15,21 @@ public class Courses {
 
     public CourseOffering searchByName(String name) {
 
-        return null;
+        int lower = 0;
+        int upper = courseList.size() - 1;
+        int middle;
+
+        while(true) {
+            middle = (upper - lower) / 2 + lower;
+
+            if(courseList.get(middle).getCourseName().compareTo(name) == 0) {
+                return courseList.get(middle);
+            } else if (name.compareTo(courseList.get(middle).getCourseName()) > 0) {
+                lower = middle;
+            } else if (name.compareTo(courseList.get(middle).getCourseName()) < 0){
+                upper = middle;
+            }
+        }
     }
 
     public CourseOffering searchByNumber(int number) {

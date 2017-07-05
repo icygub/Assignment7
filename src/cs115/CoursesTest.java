@@ -1,8 +1,6 @@
 package cs115;
 
 import java.time.LocalTime;
-import java.util.Arrays;
-import java.util.Collections;
 
 import static org.junit.Assert.*;
 
@@ -17,13 +15,19 @@ public class CoursesTest {
             courses.add(new CourseOffering(i, "Math", "Jones", '3', "102", LocalTime.MIDNIGHT, 3, 25));
         }
 
+        int rand = (int) (Math.random() * courses.getCourseList().size());
+        CourseOffering courseOffering = courses.getCourseList().get(rand);
 
+        CourseOffering courseOffering1;
+        courseOffering1 = courses.searchByName("Math");
+        System.out.println(courseOffering.getCourseName());
+        System.out.println(courseOffering1.getCourseName());
     }
 
     @org.junit.Test
     public void searchByNumber() throws Exception {
         Courses courses = new Courses();
-        for(int i = 0; i < 1000000; i++) {
+        for(int i = 0; i < 1000; i++) {
             courses.add(new CourseOffering(i, "Math", "Jones", '3', "102", LocalTime.MIDNIGHT, 3, 25));
         }
         int rand = (int) (Math.random() * courses.getCourseList().size());

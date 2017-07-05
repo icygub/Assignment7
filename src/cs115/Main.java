@@ -1,6 +1,10 @@
 package cs115;
 
-import java.time.LocalTime;
+/**
+ * John Diaz and Jordan Wells
+ * Assignment 7
+ * Binary Search
+ */
 
 public class Main {
 
